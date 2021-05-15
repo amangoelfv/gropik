@@ -1,0 +1,41 @@
+<div class="app-container">
+  <div class="header d-flx j-cont-end a-items-c">
+    <div class="auth-container d-flx">
+      <app-button [config]='signINButtonConfig' (click)='openLoginModal()'></app-button>
+      <app-button [config]='signUpButtonConfig'></app-button>
+    </div>
+  </div>
+  <div class="hero-container d-flx flx-d-clm a-items-c text-color-white">
+    <div class="logo">gropik</div>
+    <div class="hero-title-container font-boldest">
+      <div>Grocery and more,</div>
+      <div>without any hustle</div>
+    </div>
+    <div class="input-container">
+      <app-select-location></app-select-location>
+    </div>
+  </div>
+  <div class="section-container d-flx flx-d-clm a-items-c">
+    <div class="section-heading">Why choose us ?</div>
+    <div class="features-container d-flx flx-d-clm">
+      <app-feature-card class='feature-card' *ngFor='let feature of features' [config]='feature'></app-feature-card>
+    </div>
+  </div>
+  <div class="width-100 background-light-primary">
+    <div class="section-container become-seller d-flx flx-d-clm a-items-c">
+      <img [src]='commonImagesUrls.BECOME_SELLER' alt="">
+      <div class="content d-flx flx-d-clm a-items-c">
+        <div class="promo-content font-boldest">Have a shop?</div>
+        <div class="promo-text text-c">Register with us to get extra orders & benifit the experience of digital
+          customers!</div>
+        <app-button [config]='becomeSellerConfig'></app-button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-modal #loginModal [templateRef]='loginTemplate'></app-modal>
+
+<ng-template #loginTemplate>
+  <app-login (close)='closeLoginModal()'></app-login>
+</ng-template>

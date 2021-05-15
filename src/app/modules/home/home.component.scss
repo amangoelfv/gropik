@@ -1,0 +1,99 @@
+@import "../../../styles/partials/layout";
+@import "../../../styles/partials/colors";
+@import "../../../styles/partials/fonts";
+@import "../../../styles/partials/screen-sizes";
+
+.app-container {
+  overflow: hidden;
+  .header {
+    padding: $large;
+    position: absolute;
+    right: 0;
+  }
+  .hero-container {
+    background-image: url("https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,format=auto,quality=50/https://cdn.doordash.com/media/consumer/home/landing/new/hero_landing_us_mobile.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: $large 0 $xxxxxLarge;
+
+    .logo {
+      margin: $xxxxxLarge 0 $xLarge;
+    }
+    .hero-title-container {
+      font-size: $xLarge;
+      margin-bottom: $xLarge;
+    }
+    .input-container {
+      width: 300px;
+    }
+  }
+  .features-container {
+    padding: 0 $large;
+    .feature-card {
+      width: 100%;
+      margin: $large 0;
+    }
+  }
+  .become-seller {
+    padding: 0;
+    .content {
+      padding: $xxLarge;
+      .promo-content {
+        font-size: $mainHeading;
+        margin-bottom: $large;
+      }
+      .promo-text {
+        margin-bottom: $large;
+      }
+    }
+  }
+}
+@media #{$tab-media-query-major} {
+  .app-container {
+    .hero-container {
+      height: unset;
+      padding-bottom: $xxxxxxxxLarge;
+      .input-container {
+        width: 400px;
+      }
+    }
+    .features-container {
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-evenly;
+      .feature-card {
+        width: 250px;
+      }
+    }
+    .become-seller {
+      flex-direction: row;
+      padding: $xxLarge 0;
+      .content {
+        padding: $xxLarge;
+        align-items: flex-start;
+        .promo-content {
+          font-size: $xxLargeHeading;
+          margin-bottom: $large;
+        }
+        .promo-text {
+          text-align: left;
+          font-weight: $bold;
+        }
+      }
+    }
+  }
+}
+@media #{$desk-media-query-major} {
+  .app-container {
+    .hero-container {
+      .logo {
+        margin: 0 0 $xxxxxxLarge;
+      }
+      .hero-title-container {
+        font-size: $xxxLargeHeading;
+        margin-bottom: $xLarge;
+      }
+    }
+  }
+}

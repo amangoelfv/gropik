@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "gropik"
+  "defaultProject": "gropik",
+  "cli": {
+    "analytics": false
+  }
 }

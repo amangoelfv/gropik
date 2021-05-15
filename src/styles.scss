@@ -1,1 +1,306 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  font-family: "Raleway", sans-serif;
+  margin: 0;
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+
+// Use import for scss (containing css classes) with caution, leads to code duplication. Use it only for mixins variables etc
+@import "../src/styles/partials/colors";
+@import "../src/styles/partials/fonts";
+@import "../src/styles/partials/screen-sizes";
+@import "../src/styles/partials/layout";
+
+.font-italic {
+  font-style: italic;
+}
+
+.font-bold {
+  font-weight: $bold;
+}
+
+.font-bolder {
+  font-weight: $bolder;
+}
+.font-boldest {
+  font-weight: $boldest;
+}
+
+.text-color-dark {
+  color: $dark;
+}
+.text-color-white {
+  color: $white;
+}
+
+.background-light-primary {
+  background-color: $primaryColorLight;
+
+}
+.text-transform-uppercase {
+  text-transform: uppercase;
+}
+.error-message {
+  color: $darkRed;
+  font-size: $secondary;
+}
+img {
+  max-width: 100%;
+}
+
+.c-pointer {
+  cursor: pointer;
+}
+
+.text-line-through {
+  text-decoration: line-through;
+}
+
+.c-not-allowed {
+  cursor: not-allowed;
+}
+
+.text-c {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.589);
+  top:0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 2s ease;
+}
+.app-container {
+  background-color: $white;
+}
+
+.section-container {
+  padding: $xxxxLarge 0;
+  max-width: 1260px;
+  margin: auto;
+}
+
+.app-lq-container {
+  width: 100%;
+}
+
+.show-mob,
+.show-mob-tab,
+d-block {
+  display: block;
+}
+.show-mob-flx,
+.show-mob-tab-flx {
+  display: flex;
+}
+.show-desk,
+.show-tab-desk,
+.show-desk-flx,
+.show-tab-desk-flx,
+.hide {
+  display: none;
+}
+.text-ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.overflow-y-mob {
+  overflow-y: scroll;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+/* flex custom css :: Start */
+.d-flx {
+  display: flex;
+}
+.flx-d-row,
+.flx-d-row-clm {
+  flex-direction: row;
+}
+.flx-d-clm,
+.flx-d-clm-row {
+  flex-direction: column;
+}
+.flx-1 {
+  flex: 1;
+}
+.flx-2 {
+  flex: 2;
+}
+.flx-3 {
+  flex: 3;
+}
+.flx-4 {
+  flex: 4;
+}
+.flx-5 {
+  flex: 5;
+}
+.flx-6 {
+  flex: 6;
+}
+.flx-7 {
+  flex: 7;
+}
+.flx-8 {
+  flex: 8;
+}
+.flx-wrp {
+  flex-wrap: wrap;
+}
+.a-items-start {
+  align-items: flex-start;
+}
+.a-items-c {
+  align-items: center;
+}
+.a-items-e {
+  align-items: flex-end;
+}
+.a-items-b {
+  align-items: baseline;
+}
+.a-items-stretch {
+  align-items: stretch;
+}
+.a-self-stretch {
+  align-self: stretch;
+}
+.j-cont-cen {
+  justify-content: center;
+}
+.j-cont-end {
+  justify-content: flex-end;
+}
+.j-cont-space-bet {
+  justify-content: space-between;
+}
+.flx-gap-16 {
+  gap: $large;
+}
+.flx-gap-32 {
+  gap: $xxLarge;
+}
+/* flex custom css :: End */
+.d-grid {
+  display: grid;
+}
+.d-inline-block {
+  display: inline-block;
+}
+/* heading generic CSS :: Start */
+
+.logo {
+  font-weight: $boldest;
+  font-size: $xxxLarge;
+}
+.section-heading {
+  font-size: $mainHeading;
+  font-weight: $boldest;
+  margin-bottom: $medium;
+}
+.modal-heading {
+  font-size: $blockHeading;
+  font-weight: $bolder;
+}
+.intro-heading {
+  font-size: $supportText;
+  font-weight: $bold;
+}
+.gb-heading {
+  color: $dark;
+  font-size: $blockHeadingSm;
+  font-weight: $bold;
+  line-height: 24px;
+}
+.description {
+  color: $mediumGrey;
+  font-size: $tertiary;
+  font-weight: $normal;
+  line-height: 16px;
+}
+.sub-heading {
+  color: $dark;
+  font-size: $secondary;
+  font-weight: $normal;
+  line-height: 16px;
+}
+.lb-heading,
+.lb-heading-small {
+  color: $dark;
+  font-size: $secondary;
+  font-weight: $bold;
+  line-height: 18px;
+}
+.lb-sub-heading {
+  color: $lightGrey;
+  font-size: $tertiary;
+  font-weight: $normal;
+  line-height: 16px;
+}
+.para {
+  color: $dark;
+  font-size: $tertiary;
+  line-height: 16px;
+}
+/* heading generic CSS :: End */
+
+.height-100 {
+  height: 100%;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+// Hide images if there is no src tag on them
+img:not([src]), img[src="//:0"]
+{
+  opacity: 0;
+}
+
+.image-cover {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+@media #{$tab-media-query-major} {
+  .section-heading {
+    margin-bottom: $xxxxLarge;
+  }
+  .show-tab-desk {
+    display: block;
+  }
+
+  .show-tab-desk-flx {
+    display: flex;
+  }
+}
+@media #{$desk-media-query-major} {
+  .show-desk {
+    display: block;
+  }
+
+  .show-desk-flx {
+    display: flex;
+  }
+}

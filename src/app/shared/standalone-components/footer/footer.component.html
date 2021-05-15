@@ -1,0 +1,13 @@
+<div class="footer-container d-flx flx-d-clm a-items-c">
+  <div class="social-links-container d-flx a-items-c">
+    <div class="footer-link">
+      SOCIAL LINKS
+    </div>
+    <div class="d-flx">
+      <img *ngFor='let social of socialLinks' [src]='social.icon' class='social-link footer-link'>
+    </div>
+  </div>
+  <div class="links-container d-flx flx-d-clm a-items-c">
+    <app-button *ngFor='let navLink of navLinks' [config]='navLink'></app-button>
+  </div>
+</div>

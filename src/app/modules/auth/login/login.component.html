@@ -1,0 +1,22 @@
+<div class="login-container d-flx flx-d-clm a-items-c">
+  <div class="heading d-flx j-cont-space-bet width-100">
+    <div class="modal-heading">Log in</div>
+    <img (click)='closeModal()' [src]='commonIconUrls.close' class='close-icon c-pointer'>
+  </div>
+  <div class="google-btn d-flx j-cont-cen font-bolder a-items-c c-pointer">
+    <img [src]="commonIconUrls.google" alt="">
+    <div class="google-text font-boldest">
+      Sign in with Google
+    </div>
+  </div>
+  <div class="divider width-100">
+    <div class="break-text">or</div>
+  </div>
+  <form [formGroup]='loginForm' class="login-form d-flx flx-d-clm width-100">
+    <input formControlName='email' placeholder="Email" type='email' class='auth-input font-bold'>
+    <input  maxlength="16" formControlName='password' type='password' placeholder="Password" class='auth-input font-bold'>
+    <p *ngIf='errorMessage' class="error-message">{{errorMessage}}</p>
+    <app-button [config]='forgotPasswordBtnConfig' class='forgot-password'></app-button>
+    <app-button [config]='loginBtnConfig'></app-button>
+  </form>
+</div>

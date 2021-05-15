@@ -1,0 +1,13 @@
+<div class="d-flx flx-d-clm a-items-c select-city-container">
+  <div class="d-flx input-container a-items-c">
+
+    <img [src]="commonIconUrls.mapPin" alt="i" class="map-pin">
+    <input [formControl]='cityInput' (focus)='onInputFocus()' (blur)='onInputBlur()' class="input font-bolder"
+      placeholder="Enter a location to search"  type="text">
+    <img [src]="commonIconUrls.chevronRight" (click)='onSubmit()' alt="i" class='search-icon show-tab-desk c-pointer'>
+  </div>
+  <div class='autocomplete-results' [ngClass]='resultClasses'>
+    <div class="result c-pointer" (click)='onSelectOption(result)' *ngFor='let result of recommendations'>{{result}}
+    </div>
+  </div>
+</div>
