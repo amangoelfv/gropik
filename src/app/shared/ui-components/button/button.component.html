@@ -1,0 +1,6 @@
+<div #btn class="btn font-boldest c-pointer text-c"
+  (click)='onClickBtn()'
+  [ngClass]='{"primary": config.type === buttonTypes.PRIMARY,"text": config.type === buttonTypes.TEXT}'
+  [style.color]='config.textColor' [style.background-color]='config.fill'>
+  {{config.text}}
+</div>

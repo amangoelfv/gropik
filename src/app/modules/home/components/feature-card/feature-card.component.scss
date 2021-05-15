@@ -1,0 +1,27 @@
+@import "../../../../../styles/partials/layout";
+@import "../../../../../styles/partials/fonts";
+@import "../../../../../styles/partials/colors";
+
+.feature-container {
+  .feature-bg {
+    width: 100%;
+  }
+  .img-container {
+    height: 150px;
+    width: 100%;
+    .top-image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+
+    }
+  }
+  .content {
+    padding: $small;
+    // margin: 150px 0 $medium;
+    .heading {
+      font-size: $supportText;
+      margin: $medium 0;
+    }
+  }
+}

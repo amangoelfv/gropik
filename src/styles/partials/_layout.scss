@@ -1,0 +1,18 @@
+/* For grid layout we have to use generic size for margin and padding */
+/* These lengths are multiple of 8 where 4px and 12px are exceptions */
+$xxxSmall: 1px;
+$xxSmall: 2px;
+$xSmall: 4px;
+$small: 8px;
+$medium: 12px;
+$large: 16px;
+$xLarge: 24px;
+$xxLarge: 32px;
+$xxxLarge: 40px;
+$xxxxLarge: 48px;
+$xxxxxLarge: 96px;
+$xxxxxxLarge: 120px;
+$xxxxxxxLarge: 152px;
+$xxxxxxxxLarge: 196px;
+
+$sectionPadding: 60px;

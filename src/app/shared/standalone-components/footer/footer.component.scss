@@ -1,0 +1,31 @@
+@import "../../../../styles/partials/layout";
+@import "../../../../styles/partials/colors";
+@import "../../../../styles/partials/fonts";
+@import "../../../../styles/partials/screen-sizes";
+
+.footer-container {
+  background-color: $primaryColorTrans;
+  padding: $xLarge;
+  .footer-link {
+    margin: $medium;
+    color: white;
+    font-weight: $bold;
+  }
+  .social-link {
+    width: $xxxLarge;
+  }
+  .links-container {
+    order: -1;
+  }
+}
+
+@media #{$tab-media-query-major} {
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+    .links-container {
+      flex-direction: row;;
+      order: 0;
+    }
+  }
+}

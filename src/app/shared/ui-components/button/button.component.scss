@@ -1,0 +1,11 @@
+@import "./../../../../styles/partials/layout";
+@import "./../../../../styles/partials/colors";
+.btn {
+  padding: $large $xxLarge;
+  border-radius: $xxLarge;
+  transition: .1s ease;
+  user-select: none;
+}
+.btn:hover {
+  transform: scale(1.05);
+}
