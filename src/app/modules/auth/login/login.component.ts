@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
     textColor: AppColors.darkGrey,
     type: IBtnTypes.PRIMARY,
     fill: AppColors.primaryColor,
-    text: 'Sign in'
+    text: 'Sign in',
   }
   loginForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),

@@ -7,7 +7,7 @@
     <img [src]="commonIconUrls.chevronRight" (click)='onSubmit()' alt="i" class='search-icon show-tab-desk c-pointer'>
   </div>
   <div class='autocomplete-results' [ngClass]='resultClasses'>
-    <div class="result c-pointer" (click)='onSelectOption(result)' *ngFor='let result of recommendations'>{{result}}
+    <div class="result c-pointer" (click)='onSelectOption(result)' *ngFor='let result of recommendations'>{{result.placeName}}, {{result.placeAddress}}
     </div>
   </div>
 </div>

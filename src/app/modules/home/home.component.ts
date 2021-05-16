@@ -53,9 +53,10 @@ export class HomeComponent implements OnInit {
   getCachedUserData() {
 
     const user = this.storageService.getItem('user');
-    if (user.token) {
+    if (user?.token) {
       this.userService.signin(user)
     }
+
   }
   ngOnDestroy() {
     this.signInSub.unsubscribe();
