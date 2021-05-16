@@ -2,10 +2,18 @@
 @import "./../../../../styles/partials/colors";
 .btn {
   padding: $large $xxLarge;
-  border-radius: $xxLarge;
+  border-radius: $small;
   transition: .1s ease;
   user-select: none;
 }
-.btn:hover {
-  transform: scale(1.05);
+.enabled:hover {
+  transform: scale(1.01);
+}
+
+.disabled {
+  pointer-events:none;
+  opacity: 0.5;
+  .btn:hover {
+    transform: scale(1);
+  }
 }
