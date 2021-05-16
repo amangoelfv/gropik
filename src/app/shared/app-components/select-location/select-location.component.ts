@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { commonIconUrls } from 'src/assets/icons/CommonIconsUrl';
 import { debounceTime, filter, switchMap, tap } from "rxjs/operators";
+import { LocationService } from 'src/app/services/location.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-select-location',
@@ -10,7 +12,10 @@ import { debounceTime, filter, switchMap, tap } from "rxjs/operators";
 })
 export class SelectLocationComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private locationService: LocationService,
+    private router: Router
+  ) { }
 
   resultClasses = ''
   commonIconUrls = commonIconUrls;
@@ -20,7 +25,6 @@ export class SelectLocationComponent implements OnInit {
     this.cityInput.valueChanges
       .pipe(
         filter((value: any) => value?.length < 3)).subscribe((val) => {
-          console.log("failes")
           this.resultClasses = ''
 
         })
@@ -28,13 +32,11 @@ export class SelectLocationComponent implements OnInit {
       .pipe(
         filter((value: any) => value?.length >= 3 && !this.citySelected),
         debounceTime(100),
-        switchMap((value) =>
-          [this.recommendationsOg.filter(val => val.includes(value))]
+        switchMap((value) => this.locationService.getSearchLocalities(value)
         ))
       .subscribe((val) => {
         this.recommendations = val;
         this.resultClasses = 'showResult'
-
       })
 
   }
@@ -56,9 +58,12 @@ export class SelectLocationComponent implements OnInit {
   onSubmit() {
     console.log(this.cityInput.value)
   }
-  onSelectOption(city: any) {
+  onSelectOption(region: any) {
     this.citySelected = true;
-    this.cityInput.setValue(city);
-    this.resultClasses = ''
+    this.cityInput.setValue(region.placeName + ', ' + region.placeAddress);
+    this.locationService.setSelectedLocation(region)
+    this.resultClasses = '';
+    const city = region.placeAddress.split(',')[0].toLowerCase();
+    this.router.navigate(['', city])
   }
 }

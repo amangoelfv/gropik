@@ -1,5 +1,5 @@
-<div #btn class="btn font-boldest c-pointer text-c" (click)='onClickBtn()' [class]='cssClasses'
-  [ngClass]='{"disabled": config.showLoader}' [style.color]='config.textColor' [style.background-color]='config.fill'>
+<div #btn  [class]='cssClasses' class="btn font-boldest c-pointer text-c" (click)='onClickBtn()'
+  [ngClass]='{"disabled": config.showLoader || config.disabled}' [style.color]='config.textColor' [style.background-color]='config.fill'>
   <div *ngIf='!config.showLoader' class="">{{label}}</div>
   <app-loader *ngIf='config.showLoader'></app-loader>
 </div>

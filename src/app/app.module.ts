@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { UiComponentsModule } from './shared/ui-components/ui-components.module';
 import { FooterComponent } from './shared/standalone-components/footer/footer.component';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { HttpClientModule } from '@angular/common/http';
 
 
 const firebaseConfig = {
@@ -27,6 +28,7 @@ const firebaseConfig = {
     AppRoutingModule,
     UiComponentsModule,
     AngularFireAuthModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

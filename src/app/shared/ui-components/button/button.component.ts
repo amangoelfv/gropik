@@ -33,23 +33,12 @@ export class ButtonComponent implements OnInit {
   }
 
   label: string = '';
-  ngOnChanges() {
-    if (this.config.showLoader) {
-      console.log("hello")
-      this.cssClasses += 'disabled';
-      this.config.text = 'Please wait';
-      this.label = 'Please wait'
-    } else {
-      this.cssClasses += 'enabled'
-      this.label = this.config.text;
 
-    }
-  }
 
   cssClasses: string = '';
   renderConfig() {
     this.label = this.config.text;
-    this.cssClasses += this.config.disabled ? 'disabled ' : 'enabled ';
+    this.cssClasses = this.config.disabled ? 'disabled' : 'enabled';
 
   }
   onClickBtn() {
