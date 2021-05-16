@@ -14,12 +14,17 @@ export class ModalComponent implements OnInit {
   @ViewChild('template') modal!: ElementRef;
   modalVisible: boolean = false;
   ngOnInit(): void {
-
+    document.addEventListener('keyup', (event) => {
+      if (this.modalVisible && event.key === "Escape") {
+        this.closeModal();
+      }
+    })
   }
 
-  cssClasses = 'modal show'
+  cssClasses = 'modal hide'
   showModal() {
     this.cssClasses = 'modal show';
+    this.modalVisible = true;
   }
 
   closeModal() {

@@ -1,0 +1,69 @@
+@import "../../../../styles/partials/layout";
+@import "../../../../styles/partials/fonts";
+@import "../../../../styles/partials/colors";
+@import "../../../../styles/partials/screen-sizes";
+
+.login-container {
+  background-color: $white;
+  padding: $large;
+  width: 90vw;
+  position: relative;
+  border-radius: $small;
+  .close-icon {
+    width: $medium;
+  }
+  .google-btn {
+    margin: $xxLarge $large;
+    color: $google;
+    border: 1px solid $google;
+    padding: $medium;
+    border-radius: $small;
+    width: 96%;
+    img {
+      width: $xLarge;
+      margin: 0 $large;
+    }
+  }
+  .divider {
+    height: 1px;
+    background: $xxxLightGrey;
+    margin: $medium;
+    position: relative;
+  }
+  .break-text {
+    height: $large;
+    position: absolute;
+    top: -$large/1.5;
+    left: 50%;
+    padding: 0 $xxSmall;
+    transform: translateX(-50%);
+    background: $white;
+  }
+  .signup-form {
+    margin: $large 0;
+    .error-message {
+      margin: $medium $xxxSmall;
+    }
+    .signup-btn {
+      // margin: $medium 0;
+    }
+    .forgot-password {
+      margin: auto;
+    }
+    .auth-input {
+      margin: 0 0 $medium;
+      border: 1px solid $xLightGrey;
+      padding: $medium;
+      border-radius: $small;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+@media #{$tab-media-query-major} {
+  .login-container {
+    width: 30vw;
+  }
+}

@@ -16,7 +16,7 @@
     <input formControlName='email' placeholder="Email" type='email' class='auth-input font-bold'>
     <input  maxlength="16" formControlName='password' type='password' placeholder="Password" class='auth-input font-bold'>
     <p *ngIf='errorMessage' class="error-message">{{errorMessage}}</p>
-    <app-button [config]='forgotPasswordBtnConfig' class='forgot-password'></app-button>
-    <app-button [config]='loginBtnConfig'></app-button>
+    <app-button [config]='forgotPasswordBtnConfig' class='forgot-password' ></app-button>
+    <app-button [config]='loginBtnConfig' (clicked)='login()'></app-button>
   </form>
 </div>

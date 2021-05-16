@@ -1,8 +1,10 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { AppColors } from 'src/app/shared/constants/colors';
-import { IBtnConfig, IBtnTypes } from 'src/app/shared/ui-components/button/button.component';
-import { ModalComponent } from 'src/app/shared/ui-components/modal/modal.component';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { UserService } from '../../services/user.service';
+import { AppColors } from '../../shared/constants/colors';
+import { IBtnConfig, IBtnTypes } from '../../shared/ui-components/button/button.component';
+import { ModalComponent } from '../../shared/ui-components/modal/modal.component';
 import { CommonImagesUrl } from 'src/assets/images/ImagesUrl';
+import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'app-home',
@@ -13,9 +15,22 @@ export class HomeComponent implements OnInit {
 
 
   @ViewChild('loginModal') loginModal!: ModalComponent;
+  @ViewChild('signupModal') signupModal!: ModalComponent;
 
-  constructor() { }
+  constructor(
+    private userService: UserService,
+    private storageService: StorageService,
+
+  ) { }
   commonImagesUrls = CommonImagesUrl;
+  userAccountBtnConfig: IBtnConfig = {
+    textColor: AppColors.white,
+    text: ''
+  }
+  logoutBtnConfig: IBtnConfig = {
+    text: 'Sign Out',
+    fill: AppColors.white
+  }
   signUpButtonConfig: IBtnConfig = {
     text: 'Sign Up',
     type: IBtnTypes.PRIMARY,
@@ -26,15 +41,55 @@ export class HomeComponent implements OnInit {
     type: IBtnTypes.TEXT,
     textColor: AppColors.white
   }
+  user: any = null;
+  signInSub: any;
+  signOutSub: any;
   ngOnInit(): void {
-
+    this.subscribeToSignIn();
+    this.subscribeToSignOut();
+    this.getCachedUserData();
   }
 
+  getCachedUserData() {
+
+    const user = this.storageService.getItem('user');
+    if (user.token) {
+      this.userService.signin(user)
+    }
+  }
+  ngOnDestroy() {
+    this.signInSub.unsubscribe();
+    this.signOutSub.unsubscribe();
+  }
   openLoginModal() {
     this.loginModal.showModal();
   }
   closeLoginModal() {
     this.loginModal.closeModal();
+  }
+
+  openSignupModal() {
+    this.signupModal.showModal();
+  }
+  closeSignupModal() {
+    this.signupModal.closeModal();
+  }
+
+  subscribeToSignIn() {
+    this.signInSub = this.userService.userSignedInSub.subscribe((user) => {
+      this.user = user;
+      this.userAccountBtnConfig.text = user.name.split(' ')[0] + '\'s Account';
+    })
+  }
+
+  subscribeToSignOut() {
+    this.signOutSub = this.userService.userSignedOutSub.subscribe(() => {
+      this.user = null;
+    })
+  }
+
+  signOut() {
+    this.userService.signOut();
   }
   becomeSellerConfig: IBtnConfig = {
     type: IBtnTypes.PRIMARY,

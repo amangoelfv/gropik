@@ -6,6 +6,8 @@ export interface IBtnConfig {
   fill?: string;
   textColor?: string;
   link?: string;
+  disabled?: boolean;
+  showLoader?: boolean;
 }
 export enum IBtnTypes {
   PRIMARY = 'primary',
@@ -23,19 +25,41 @@ export class ButtonComponent implements OnInit {
   @Input()
   config!: IBtnConfig;
 
-  @Output() click = new EventEmitter<boolean>(false)
+  @Output() clicked = new EventEmitter<boolean>(false)
   buttonTypes = IBtnTypes;
 
   ngOnInit(): void {
-
+    this.renderConfig();
   }
 
-  onClickBtn() {
-    this.click.emit(true);
+  label: string = '';
+  ngOnChanges() {
+    if (this.config.showLoader) {
+      console.log("hello")
+      this.cssClasses += 'disabled';
+      this.config.text = 'Please wait';
+      this.label = 'Please wait'
+    } else {
+      this.cssClasses += 'enabled'
+      this.label = this.config.text;
 
-    if (this.config.link) {
-      this.router.navigate([this.config.link])
     }
   }
+
+  cssClasses: string = '';
+  renderConfig() {
+    this.label = this.config.text;
+    this.cssClasses += this.config.disabled ? 'disabled ' : 'enabled ';
+
+  }
+  onClickBtn() {
+    if (!this.config.disabled && !this.config.showLoader) {
+      this.clicked.emit(true);
+      if (this.config.link) {
+        this.router.navigate([this.config.link]);
+      }
+    }
+  }
+
 
 }
