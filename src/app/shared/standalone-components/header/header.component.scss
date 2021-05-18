@@ -14,11 +14,9 @@
 }
 @media #{$tab-media-query-major} {
   .header-container {
-    .header {
-      max-width: 1260px;
-    }
     .header-padding {
       padding: $medium 0;
+      max-width: 1260px;
     }
   }
 }
