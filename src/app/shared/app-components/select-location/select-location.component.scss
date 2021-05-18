@@ -42,7 +42,8 @@
     margin: $medium 0;
     border-radius: $small;
     position: absolute;
-    overflow: hidden;
+    overflow-y: scroll;
+    height: 300px;
     width: 300px;
     top: $xxxxLarge + $xLarge;
     opacity: 0;

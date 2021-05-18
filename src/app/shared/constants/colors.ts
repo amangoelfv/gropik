@@ -44,6 +44,7 @@ export const AppColors = {
   beige: '#F7F1DF',
   azureish: '#E0EFF1',
   platinum: '#E1E5E7',
-  google: '#4285F4'
+  google: '#4285F4',
+  transparent: 'transparent'
 
 }

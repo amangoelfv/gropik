@@ -1,1 +1,11 @@
-<p>{{city}} Not available here </p>
+<div class="app-container app-container-pd">
+  <div class="section-container" *ngFor='let section of data'>
+    <div class="section-header">
+      <div class="section-heading">{{section.title}}</div>
+      <div class="section-subheading">{{section.subtitle}}</div>
+    </div>
+    <div class="list-cont d-grid">
+      <app-shop-card *ngFor='let shop of section.shops' class="card-cont" [shop]='shop'></app-shop-card>
+    </div>
+  </div>
+</div>

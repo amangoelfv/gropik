@@ -26,13 +26,13 @@
     }
     .input-container {
       width: 300px;
+      z-index: 0;
     }
   }
   .features-container {
     padding: 0 $large;
     .feature-card {
       width: 100%;
-      margin: $large 0;
     }
   }
   .become-seller {

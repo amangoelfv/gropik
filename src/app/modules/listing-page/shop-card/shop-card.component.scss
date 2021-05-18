@@ -1,0 +1,28 @@
+@import "../../../../styles/partials/layout";
+@import "../../../../styles/partials/colors";
+@import "../../../../styles/partials/fonts";
+@import "../../../../styles/partials/screen-sizes";
+
+.shop-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.details {
+  margin: $medium;
+  .summary-cont {
+    padding-left: $medium;
+    .shop-name {
+      font-size: $blockHeadingSm;
+    }
+  }
+  .cta-cont {
+    padding-right: $medium;
+  }
+}
+
+@media #{$tab-media-query-major} {
+  .shop-image {
+    height: 250px;
+  }
+}

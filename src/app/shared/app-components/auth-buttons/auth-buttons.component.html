@@ -1,0 +1,17 @@
+<div class="auth-container d-flx">
+  <app-button *ngIf='!user' [config]='signINButtonConfig' (clicked)='openLoginModal()'></app-button>
+  <app-button *ngIf='!user' [config]='signUpButtonConfig' (clicked)='openSignupModal()'></app-button>
+  <app-button *ngIf='user' [config]='userAccountBtnConfig' (clicked)='openLoginModal()'></app-button>
+  <app-button *ngIf='user' [config]='logoutBtnConfig' (clicked)='signOut()'></app-button>
+</div>
+
+
+<app-modal #loginModal [templateRef]='loginTemplate'></app-modal>
+<app-modal #signupModal [templateRef]='signupTemplate'></app-modal>
+
+<ng-template #loginTemplate>
+  <app-login (close)='closeLoginModal()'></app-login>
+</ng-template>
+<ng-template #signupTemplate>
+  <app-signup (close)='closeSignupModal()'></app-signup>
+</ng-template>

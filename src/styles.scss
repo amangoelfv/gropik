@@ -2,9 +2,6 @@
 * {
   font-family: "Raleway", sans-serif;
   margin: 0;
-  &::-webkit-scrollbar {
-    width: 0px;
-  }
 }
 html {
   scroll-behavior: smooth;
@@ -40,7 +37,6 @@ html {
 
 .background-light-primary {
   background-color: $primaryColorLight;
-
 }
 .text-transform-uppercase {
   text-transform: uppercase;
@@ -68,19 +64,24 @@ img {
 .text-c {
   text-align: center;
 }
-
+.position-fixed {
+  position: fixed;
+}
+.position-absolute {
+  position: absolute;
+}
 .text-right {
   text-align: right;
 }
 .modal {
   position: fixed;
-  z-index: 1;
+  z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.589);
-  top:0;
+  top: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -88,6 +89,9 @@ img {
 }
 .app-container {
   background-color: $white;
+}
+.app-container-pd {
+  padding: $xxxLarge $medium;
 }
 
 .section-container {
@@ -212,11 +216,19 @@ d-block {
   font-weight: $boldest;
   font-size: $xxxLarge;
 }
-.section-heading {
-  font-size: $mainHeading;
-  font-weight: $boldest;
-  margin-bottom: $medium;
+.section-header {
+  margin-bottom: $xLarge;
+  .section-heading {
+    font-size: $supportText;
+    font-weight: $boldest;
+    margin-bottom: $small;
+  }
+  .section-subheading {
+    color: $mediumGrey;
+    font-size: $secondary;
+  }
 }
+
 .modal-heading {
   font-size: $blockHeading;
   font-weight: $bolder;
@@ -284,8 +296,14 @@ img:not([src]), img[src="//:0"]
 }
 
 @media #{$tab-media-query-major} {
-  .section-heading {
-    margin-bottom: $xxxxLarge;
+  .section-header {
+    .section-heading {
+      font-size: $blockHeading;
+      margin-bottom: $small;
+    }
+    .section-subheading {
+      font-size: $primary;
+    }
   }
   .show-tab-desk {
     display: block;

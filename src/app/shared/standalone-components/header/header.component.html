@@ -1,0 +1,9 @@
+<div class="header-container d-flx j-cont-cen position-fixed width-100"
+  [ngClass]='{"header-shadow": headerConfig.backgroundColor!==appColors.transparent, "position-absolute": !headerConfig.fixed}'
+  [style.backgroundColor]='headerConfig.backgroundColor'>
+  <div class="d-flx j-cont-end flx-1 header"
+    [ngClass]='{"header-padding": !headerConfig.fullWidth, "j-cont-space-bet": headerConfig.showLogo}'>
+    <div (click)='goToHome()' *ngIf='headerConfig.showLogo' class="logo c-pointer">gropik</div>
+    <app-auth-buttons *ngIf='authButtonsConfig' [config]='authButtonsConfig'></app-auth-buttons>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+@import "../../../styles/partials/layout";
+@import "../../../styles/partials/colors";
+@import "../../../styles/partials/screen-sizes";
+
+.list-cont {
+  gap: $large;
+  .card-cont {
+    box-shadow: 0 0 5px $lightGrey;
+    border-radius: $medium;
+  }
+}
+
+@media #{$tab-media-query-major} {
+  .list-cont {
+    grid-template-columns: repeat(3, 1fr);
+    .card-cont {
+      .shop-image {
+        height: 250px;
+      }
+    }
+  }
+}

@@ -10,6 +10,7 @@
 
 .modal {
   transition: 2s ease;
+  z-index: 1000;
   animation: grow .3s ease-in-out;
 }
 @keyframes grow {

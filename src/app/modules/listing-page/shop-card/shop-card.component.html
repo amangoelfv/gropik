@@ -1,0 +1,12 @@
+<div class="card-cont d-flx flx-d-clm a-items-c overflow-hidden">
+  <img [src]="shop.image" class="shop-image">
+  <div class="details d-flx j-cont-space-bet width-100 a-items-e">
+    <div class="summary-cont">
+      <div class="shop-name font-boldest">{{shop.name}}</div>
+      <div class="shop-summary">{{shop.time}} mins • {{shop.rating}} stars</div>
+    </div>
+    <div class="cta-cont">
+      <app-button [config]='shopNowBtnConfig'></app-button>
+    </div>
+  </div>
+</div>
