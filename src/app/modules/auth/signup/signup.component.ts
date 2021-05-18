@@ -1,8 +1,8 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { commonIconUrls } from 'dist/gropik/assets/icons/CommonIconsUrl';
-import { AppColors } from 'src/app/shared/constants/colors';
-import { IBtnConfig, IBtnTypes } from 'src/app/shared/ui-components/button/button.component';
+import { commonIconUrls } from '../../../../assets/icons/CommonIconsUrl';
+import { AppColors } from '../../../shared/constants/colors';
+import { IBtnConfig, IBtnTypes } from '../../../shared/ui-components/button/button.component';
 
 @Component({
   selector: 'app-signup',
