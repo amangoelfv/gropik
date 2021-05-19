@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
-import { UserService } from 'src/app/services/user.service';
+import { UserService } from '../../../services/user.service';
 import { AppColors } from '../../constants/colors';
-import { IBtnConfig, IBtnTypes } from '../../ui-components/button/button.component';
+import { IBtnConfig, } from '../../ui-components/button/button.component';
 import { ModalComponent } from '../../ui-components/modal/modal.component';
 
 @Component({

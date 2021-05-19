@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { commonIconUrls } from 'src/assets/icons/CommonIconsUrl';
+import { commonIconUrls } from '../../../../assets/icons/CommonIconsUrl';
 import { AppColors } from '../../constants/colors';
 import { IBtnConfig, IBtnTypes } from '../../ui-components/button/button.component';
 

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CommonImagesUrl } from 'src/assets/images/ImagesUrl';
+import { CommonImagesUrl } from '../../../../../assets/images/ImagesUrl';
 
 @Component({
   selector: 'app-feature-card',

@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
-import { AppColors } from '../../shared/constants/colors';
-import { IBtnConfig, IBtnTypes } from '../../shared/ui-components/button/button.component';
-import { CommonImagesUrl } from 'src/assets/images/ImagesUrl';
-import { StorageService } from 'src/app/services/storage.service';
+import { CommonImagesUrl } from '../../../assets/images/ImagesUrl';
+import { StorageService } from '../../services/storage.service';
 
 @Component({
   selector: 'app-home',

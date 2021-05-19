@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
-import { commonIconUrls } from 'src/assets/icons/CommonIconsUrl';
-import { debounceTime, filter, switchMap, tap } from "rxjs/operators";
-import { LocationService } from 'src/app/services/location.service';
+import { FormControl } from '@angular/forms';
+import { commonIconUrls } from '../../../../assets/icons/CommonIconsUrl';
+import { debounceTime, filter, switchMap } from "rxjs/operators";
+import { LocationService } from '../../../services/location.service';
 import { Router } from '@angular/router';
 
 @Component({

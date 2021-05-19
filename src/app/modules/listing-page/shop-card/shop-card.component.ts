@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { AppColors } from 'src/app/shared/constants/colors';
-import { IBtnConfig } from 'src/app/shared/ui-components/button/button.component';
+import { AppColors } from '../../../shared/constants/colors';
+import { IBtnConfig } from '../../../shared/ui-components/button/button.component';
 
 @Component({
   selector: 'app-shop-card',

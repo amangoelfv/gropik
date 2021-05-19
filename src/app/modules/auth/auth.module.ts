@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { UiComponentsModule } from 'src/app/shared/ui-components/ui-components.module';
+import { UiComponentsModule } from '../../shared/ui-components/ui-components.module';
 
 
 

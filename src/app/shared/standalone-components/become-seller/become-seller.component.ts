@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonImagesUrl } from 'dist/gropik/assets/images/ImagesUrl';
+import { CommonImagesUrl } from '../../../../assets/images/ImagesUrl';
 import { AppColors } from '../../constants/colors';
 import { IBtnConfig, IBtnTypes } from '../../ui-components/button/button.component';
 

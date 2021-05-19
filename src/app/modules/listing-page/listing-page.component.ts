@@ -1,11 +1,11 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
-import { debounceTime, filter, switchMap } from 'rxjs/operators';
-import { AppColors } from 'src/app/shared/constants/colors';
-import { IBtnConfig } from 'src/app/shared/ui-components/button/button.component';
-import { ICarouselConfig } from 'src/app/shared/ui-components/carousel/carousel.component';
-import { commonIconUrls } from 'src/assets/icons/CommonIconsUrl';
+import { ActivatedRoute } from '@angular/router';
+import { debounceTime } from 'rxjs/operators';
+import { AppColors } from '../../shared/constants/colors';
+import { IBtnConfig } from '../../shared/ui-components/button/button.component';
+import { ICarouselConfig } from '../../shared/ui-components/carousel/carousel.component';
+import { commonIconUrls } from '../../../assets/icons/CommonIconsUrl';
 
 const nearbyShops = Array(20).fill('').map((x) => {
   return {

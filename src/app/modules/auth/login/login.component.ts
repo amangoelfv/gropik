@@ -1,10 +1,10 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from 'src/app/services/auth.service';
-import { UserService } from 'src/app/services/user.service';
-import { AppColors } from 'src/app/shared/constants/colors';
-import { IBtnConfig, IBtnTypes } from 'src/app/shared/ui-components/button/button.component';
-import { commonIconUrls } from 'src/assets/icons/CommonIconsUrl';
+import { AuthService } from '../../../services/auth.service';
+import { UserService } from '../../../services/user.service';
+import { AppColors } from '../../../shared/constants/colors';
+import { IBtnConfig, IBtnTypes } from '../../../shared/ui-components/button/button.component';
+import { commonIconUrls } from '../../../../assets/icons/CommonIconsUrl';
 
 @Component({
   selector: 'app-login',
