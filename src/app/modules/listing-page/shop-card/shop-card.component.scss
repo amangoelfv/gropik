@@ -3,6 +3,30 @@
 @import "../../../../styles/partials/fonts";
 @import "../../../../styles/partials/screen-sizes";
 
+.card-cont {
+  position: relative;
+  box-shadow: 0 0 5px $lightGrey;
+  border-radius: $medium;
+  .shop-offer {
+    position: absolute;
+    background-color: $primaryColor;
+    left:-2px;
+    top:5%;
+    padding: $xSmall $medium;
+    box-shadow: -2px 0 5px $mediumGrey;
+    &::before {
+      content: '';
+      position: absolute;
+      left:0;
+      top:-2px;
+      width: 2px;
+      height:2px;
+      background-color: $dark;
+      opacity: 0.5;
+      border-radius: 100% 0 0 0;
+    }
+  }
+}
 .shop-image {
   width: 100%;
   height: 200px;

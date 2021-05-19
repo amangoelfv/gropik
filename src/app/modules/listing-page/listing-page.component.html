@@ -1,5 +1,28 @@
 <div class="app-container app-container-pd">
-  <div class="section-container" *ngFor='let section of data'>
+  <!-- Trending Section -->
+  <div class="width-100 background-light-primary">
+    <div class="section-container">
+      <div class="section-header width-100 trending-header">
+        <div>
+          <div class="section-heading">{{trending.title}}</div>
+          <div class="section-subheading">{{trending.description}}</div>
+        </div>
+        <div class="searchbar d-flx a-items-c width-100">
+          <input [formControl]='searchbar' class='font-bolder width-100' placeholder="Search for shops...">
+          <img [src]='commonIconsUrl.search' class='search-icon'>
+        </div>
+      </div>
+      <app-carousel [config]='trendingCarouselConfig' [carouselItemTemplate]='trendingCarouselTemplate'>
+      </app-carousel>
+    </div>
+    <div class="font-bolder text-c no-data" [hidden]='(data[0].shops.length + data[1].shops.length)>=1'>
+      Sorry no shops available. Please try again
+    </div>
+  </div>
+
+
+  <!--  Shops -->
+  <div class="section-container" [hidden]='section.shops.length<=0' *ngFor='let section of data'>
     <div class="section-header">
       <div class="section-heading">{{section.title}}</div>
       <div class="section-subheading">{{section.subtitle}}</div>
@@ -8,4 +31,9 @@
       <app-shop-card *ngFor='let shop of section.shops' class="card-cont" [shop]='shop'></app-shop-card>
     </div>
   </div>
+  <app-become-seller></app-become-seller>
 </div>
+
+<ng-template #trendingCarouselTemplate let-item="item">
+  <app-trend-card class='card' [config]='item'></app-trend-card>
+</ng-template>

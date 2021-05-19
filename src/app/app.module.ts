@@ -7,8 +7,8 @@ import { UiComponentsModule } from './shared/ui-components/ui-components.module'
 import { FooterComponent } from './shared/standalone-components/footer/footer.component';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { HttpClientModule } from '@angular/common/http';
-import { HeaderComponent } from './shared/standalone-components/header/header.component';
 import { HeaderModule } from './shared/standalone-components/header/header.module';
+import { BecomeSellerComponent } from './shared/standalone-components/become-seller/become-seller.component';
 
 
 const firebaseConfig = {

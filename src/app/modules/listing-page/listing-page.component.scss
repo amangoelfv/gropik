@@ -1,22 +1,52 @@
 @import "../../../styles/partials/layout";
+@import "../../../styles/partials/fonts";
 @import "../../../styles/partials/colors";
 @import "../../../styles/partials/screen-sizes";
 
+
+.card {
+  margin-right: $small;
+}
+
 .list-cont {
   gap: $large;
-  .card-cont {
-    box-shadow: 0 0 5px $lightGrey;
-    border-radius: $medium;
+}
+.searchbar {
+  height: 40px;
+  background-color: $white;
+  position: relative;
+  margin: $large 0 0;
+  border-radius: $small;
+  input {
+    height:100%;
+    border: none;
+    outline: none;
+    padding: $small;
+    background-color: $transparent;
+    z-index: 1;
+  }
+  .search-icon {
+    height: 60%;
+    position: absolute;
+    right: $large;
+    z-index: 0;
   }
 }
 
+.no-data {
+  padding: $xLarge 0;
+}
 @media #{$tab-media-query-major} {
   .list-cont {
     grid-template-columns: repeat(3, 1fr);
-    .card-cont {
-      .shop-image {
-        height: 250px;
-      }
+  }
+  .trending-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .searchbar {
+      width: 400px;
+      margin:0;
     }
   }
 }

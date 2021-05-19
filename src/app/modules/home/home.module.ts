@@ -6,18 +6,23 @@ import { UiComponentsModule } from '../../shared/ui-components/ui-components.mod
 import { SelectLocationModule } from '../../shared/app-components/select-location/select-location.module';
 import { FeatureCardComponent } from './components/feature-card/feature-card.component';
 import { AuthModule } from '../auth/auth.module';
+import { BecomeSellerComponent } from 'src/app/shared/standalone-components/become-seller/become-seller.component';
+import { BecomeSellerModule } from 'src/app/shared/standalone-components/become-seller/become-seller.module';
 
 
 
 @NgModule({
-  declarations: [HomeComponent,
-    FeatureCardComponent],
+  declarations: [
+    HomeComponent,
+    FeatureCardComponent
+  ],
   imports: [
     CommonModule,
     HomeRoutingModule,
     SelectLocationModule,
     UiComponentsModule,
-    AuthModule
+    AuthModule,
+    BecomeSellerModule
   ]
 })
 export class HomeModule { }

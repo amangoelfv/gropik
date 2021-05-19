@@ -2,6 +2,7 @@
 * {
   font-family: "Raleway", sans-serif;
   margin: 0;
+  user-select: none;
 }
 html {
   scroll-behavior: smooth;
@@ -73,6 +74,11 @@ img {
 .text-right {
   text-align: right;
 }
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .modal {
   position: fixed;
   z-index: 1000;
@@ -91,11 +97,11 @@ img {
   background-color: $white;
 }
 .app-container-pd {
-  padding: $xxxLarge $medium;
+  padding: $headerHeight 0 0;
 }
 
 .section-container {
-  padding: $xxxxLarge 0;
+  padding: $xLarge $small;
   max-width: 1260px;
   margin: auto;
 }
@@ -296,14 +302,20 @@ img:not([src]), img[src="//:0"]
 }
 
 @media #{$tab-media-query-major} {
-  .section-header {
-    .section-heading {
-      font-size: $blockHeading;
-      margin-bottom: $small;
+  .section-container {
+    padding: $xxxxLarge $medium;
+    .section-header {
+      .section-heading {
+        font-size: $blockHeading;
+        margin-bottom: $small;
+      }
+      .section-subheading {
+        font-size: $primary;
+      }
     }
-    .section-subheading {
-      font-size: $primary;
-    }
+  }
+  .show-mob {
+    display: none;
   }
   .show-tab-desk {
     display: block;

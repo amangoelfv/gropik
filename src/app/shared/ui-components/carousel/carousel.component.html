@@ -1,0 +1,9 @@
+<div class="width-100 carousel-cont">
+  <div class="primary-btn show-tab-desk-flx left font-bolder c-pointer text-c flex-center" (click)='slickPrev()'>❮</div>
+  <div class="primary-btn show-tab-desk-flx right font-bolder c-pointer text-c  flex-center" (click)='slickNext()'>❯</div>
+  <div #carousel class="d-flx carousel">
+    <ng-container  *ngFor='let item of config.data'>
+      <ng-container [ngTemplateOutlet]='carouselItemTemplate' [ngTemplateOutletContext]='{"item": item}' ></ng-container>
+    </ng-container>
+  </div>
+</div>

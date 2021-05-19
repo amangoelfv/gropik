@@ -1,0 +1,48 @@
+@import "./../../../../styles/partials/layout";
+@import "./../../../../styles/partials/colors";
+@import "./../../../../styles/partials/fonts";
+@import "./../../../../styles/partials/screen-sizes";
+
+.carousel-cont {
+  position: relative;
+  .primary-btn {
+    position: absolute;
+    background-color: $primaryColor;
+    top: 50%;
+    padding: $medium;
+    font-size: $blockHeading;
+    z-index: 1;
+    width: $xxxLarge;
+    height: $xxxLarge;
+    border-radius: 50%;
+  }
+  .left {
+    left: -$xxxLarge;
+    transform: translate(-60%, -50%);
+    &:active {
+      transform: translate(-55%, -50%);
+    }
+  }
+  .right {
+    right: -$xxxLarge;
+    transform: translate(60%, -50%);
+    &:active {
+      transform: translate(55%, -50%);
+    }
+  }
+}
+.carousel {
+  overflow-x: scroll;
+  padding: $small;
+  margin: 0 -1 * $small;
+  position: relative;
+  &::-webkit-scrollbar {
+    height: 0;
+  }
+}
+
+@media #{$tab-media-query-major} {
+  .carousel-cont {
+    width: unset;
+  }
+}

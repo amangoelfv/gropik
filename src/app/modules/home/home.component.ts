@@ -16,10 +16,10 @@ export class HomeComponent implements OnInit {
     private userService: UserService,
     private storageService: StorageService,
 
-  ) { }
-  commonImagesUrls = CommonImagesUrl;
+    ) { }
 
-  ngOnInit(): void {
+
+    ngOnInit(): void {
 
     this.getCachedUserData();
   }
@@ -33,12 +33,6 @@ export class HomeComponent implements OnInit {
 
   }
 
-  becomeSellerConfig: IBtnConfig = {
-    type: IBtnTypes.PRIMARY,
-    text: 'Become a Seller',
-    fill: AppColors.primaryColor,
-    textColor: AppColors.white
-  }
   features = [
     {
       title: 'No waiting',

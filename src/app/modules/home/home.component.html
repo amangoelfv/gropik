@@ -19,16 +19,6 @@
       <app-feature-card class='feature-card' *ngFor='let feature of features' [config]='feature'></app-feature-card>
     </div>
   </div>
-  <div class="width-100 background-light-primary">
-    <div class="section-container become-seller d-flx flx-d-clm a-items-c">
-      <img [src]='commonImagesUrls.BECOME_SELLER' alt="">
-      <div class="content d-flx flx-d-clm a-items-c">
-        <div class="promo-content font-boldest">Have a shop?</div>
-        <div class="promo-text text-c">Register with us to get extra orders & benifit the experience of digital
-          customers!</div>
-        <app-button [config]='becomeSellerConfig'></app-button>
-      </div>
-    </div>
-  </div>
+  <app-become-seller></app-become-seller>
 </div>
 

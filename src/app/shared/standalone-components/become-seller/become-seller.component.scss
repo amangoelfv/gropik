@@ -1,0 +1,37 @@
+@import "../../../../styles/partials/layout";
+@import "../../../../styles/partials/colors";
+@import "../../../../styles/partials/fonts";
+@import "../../../../styles/partials/screen-sizes";
+
+.become-seller {
+  padding: 0;
+  .content {
+    padding: $xxLarge;
+    .promo-content {
+      font-size: $mainHeading;
+      margin-bottom: $large;
+    }
+    .promo-text {
+      margin-bottom: $large;
+    }
+  }
+}
+
+@media #{$tab-media-query-major} {
+  .become-seller {
+    flex-direction: row;
+    padding: $xxLarge 0;
+    .content {
+      padding: $xxLarge;
+      align-items: flex-start;
+      .promo-content {
+        font-size: $xxLargeHeading;
+        margin-bottom: $large;
+      }
+      .promo-text {
+        text-align: left;
+        font-weight: $bold;
+      }
+    }
+  }
+}

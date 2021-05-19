@@ -1,4 +1,5 @@
-<div class="card-cont d-flx flx-d-clm a-items-c overflow-hidden">
+<div class="card-cont d-flx flx-d-clm a-items-c">
+  <div *ngIf='shop.offer' class="shop-offer font-boldest">upto {{shop.offer}}</div>
   <img [src]="shop.image" class="shop-image">
   <div class="details d-flx j-cont-space-bet width-100 a-items-e">
     <div class="summary-cont">

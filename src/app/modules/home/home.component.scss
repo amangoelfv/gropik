@@ -35,19 +35,6 @@
       width: 100%;
     }
   }
-  .become-seller {
-    padding: 0;
-    .content {
-      padding: $xxLarge;
-      .promo-content {
-        font-size: $mainHeading;
-        margin-bottom: $large;
-      }
-      .promo-text {
-        margin-bottom: $large;
-      }
-    }
-  }
 }
 @media #{$tab-media-query-major} {
   .app-container {
@@ -64,22 +51,6 @@
       justify-content: space-evenly;
       .feature-card {
         width: 250px;
-      }
-    }
-    .become-seller {
-      flex-direction: row;
-      padding: $xxLarge 0;
-      .content {
-        padding: $xxLarge;
-        align-items: flex-start;
-        .promo-content {
-          font-size: $xxLargeHeading;
-          margin-bottom: $large;
-        }
-        .promo-text {
-          text-align: left;
-          font-weight: $bold;
-        }
       }
     }
   }
