@@ -14,6 +14,7 @@ export class BecomeSellerComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
   commonImagesUrls = CommonImagesUrl;
     becomeSellerConfig: IBtnConfig = {
       type: IBtnTypes.PRIMARY,
