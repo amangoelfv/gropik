@@ -11,13 +11,7 @@ export class ShopCardComponent implements OnInit {
 
   @Input() shop: any;
   constructor() { }
-  shopNowBtnConfig: IBtnConfig = {
-    text: 'Shop Now',
-    fill: AppColors.primaryColor,
-    textColor: AppColors.white,
-  }
   ngOnInit(): void {
-    this.shopNowBtnConfig.link = this.shop.link;
   }
 
 }

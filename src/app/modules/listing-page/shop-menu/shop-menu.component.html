@@ -1,0 +1,9 @@
+<div class="app-container app-container-pd">
+  <div *ngIf='shopDetails' class="section-container shop-details-cont ">
+    <img class="shop-image" [src]='shopDetails.images[0].url' alt="">
+    <div class="gb-heading">{{shopDetails.name}}</div>
+    <div class="light-subheading">{{shopDetails.category}}</div>
+    <div class="sub-heading">{{shopDetails.region}}, {{shopDetails.locality}}</div>
+    <div class="sub-heading">{{shopDetails.timings}}</div>
+  </div>
+</div>

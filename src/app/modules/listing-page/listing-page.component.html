@@ -28,12 +28,12 @@
       <div class="section-subheading">{{section.subtitle}}</div>
     </div>
     <div class="list-cont d-grid">
-      <app-shop-card *ngFor='let shop of section.shops' class="card-cont" [shop]='shop'></app-shop-card>
+      <app-shop-card (click)='navigateToShopMenu(shop)' *ngFor='let shop of section.shops' class="card-cont" [shop]='shop'></app-shop-card>
     </div>
   </div>
   <app-become-seller></app-become-seller>
 </div>
 
 <ng-template #trendingCarouselTemplate let-item="item">
-  <app-trend-card class='card' [config]='item'></app-trend-card>
+  <app-trend-card (click)='navigateToShopMenu(item)' class='card' [config]='item'></app-trend-card>
 </ng-template>

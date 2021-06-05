@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { debounceTime } from 'rxjs/operators';
 import { AppColors } from '../../shared/constants/colors';
 import { IBtnConfig } from '../../shared/ui-components/button/button.component';
@@ -11,17 +11,18 @@ const nearbyShops = Array(20).fill('').map((x) => {
   return {
     name: 'Cactus Club Cafe',
     rating: 4,
-    link: '/',
     time: 20,
     image: 'https://source.unsplash.com/1600x900/?food',
-    offer: '50% off'
+    offer: '50% off',
+    slug: 'cactus-club-cafe'
   }
 })
 const otherShops = Array(20).fill({
-  image: 'https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=300,format=auto,quality=50/https://cdn.doordash.com/media/photos/91cda9c0-fcae-446a-85eb-6545819355d8-retina-large-jpeg',
+  image: 'https://source.unsplash.com/1600x900/?food',
   name: 'Cactus Club Cafe',
   rating: 4,
   time: 20,
+  slug: 'cactus-club-cafe'
 })
 @Component({
   selector: 'app-listing-page',
@@ -32,7 +33,8 @@ export class ListingPageComponent implements OnInit {
 
   city: any;
   constructor(
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) { }
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
@@ -71,11 +73,7 @@ export class ListingPageComponent implements OnInit {
   trending = {
     title: 'Trending in your city',
     description: 'Explore the most ordered shops in Karnal',
-    data:
-      Array(10).fill({
-        image: 'https://source.unsplash.com/1600x900/?food',
-        label: 'Ramesh trading company '
-      })
+    data: nearbyShops
   }
   getBtnConfigForShop(shop: any) {
     return {
@@ -92,5 +90,11 @@ export class ListingPageComponent implements OnInit {
         this.data[0].shops = nearbyShops.filter((shop => shop.name.toLowerCase().includes(val.toLowerCase())))
         this.data[1].shops = otherShops.filter((shop => shop.name.toLowerCase().includes(val.toLowerCase())))
       })
+  }
+
+  navigateToShopMenu(shop: any) {
+    this.router.navigate([shop.slug], {
+      relativeTo: this.activatedRoute
+    })
   }
 }

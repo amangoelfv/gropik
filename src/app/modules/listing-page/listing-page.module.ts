@@ -7,6 +7,7 @@ import { ShopCardComponent } from './shop-card/shop-card.component';
 import { TrendCardComponent } from './trend-card/trend-card.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BecomeSellerModule } from '../../shared/standalone-components/become-seller/become-seller.module';
+import { ShopMenuComponent } from './shop-menu/shop-menu.component';
 
 
 
@@ -15,6 +16,7 @@ import { BecomeSellerModule } from '../../shared/standalone-components/become-se
     ListingPageComponent,
     ShopCardComponent,
     TrendCardComponent,
+    ShopMenuComponent,
   ],
   imports: [
     CommonModule,

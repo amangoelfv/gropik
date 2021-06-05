@@ -245,12 +245,18 @@ d-block {
 }
 .gb-heading {
   color: $dark;
-  font-size: $blockHeadingSm;
-  font-weight: $bold;
-  line-height: 24px;
+  font-size: $blockHeading;
+  font-weight: $bolder;
+  margin: $small 0;
 }
 .description {
-  color: $mediumGrey;
+  color: $lightGrey;
+  font-size: $tertiary;
+  font-weight: $normal;
+  line-height: 16px;
+}
+.light-subheading {
+  color: $lightGrey;
   font-size: $tertiary;
   font-weight: $normal;
   line-height: 16px;
